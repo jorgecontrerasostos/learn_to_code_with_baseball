@@ -1,7 +1,7 @@
 import pandas as pd
 from os import path
 
-DATA_DIR = '/Users/jorgecontreras/Desktop/Courses/learn_to_code_python/ltcwbb-files-main/data'
+DATA_DIR = '/Users/jorgecontreras/Desktop/web-projects/data-projects/data'
 
 # Reading csv file joining the folder path with the actual csv.
 players = pd.read_csv(
@@ -57,3 +57,15 @@ players_cuba.head()
 # Add new column to our subset of cuban players
 players_cuba['bats'] = players['bats']
 print(players_cuba.head())
+
+'''
+Outputing data with to_csv() method
+'''
+
+players_cuba.to_csv(
+    path.join(DATA_DIR,' 2018-season', 'players_cuba.csv')
+)
+players_cuba.to_csv(
+    path.join(DATA_DIR,' 2018-season', 'players_cuba.csv'),
+    index=False
+)
