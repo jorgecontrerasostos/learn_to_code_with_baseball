@@ -82,3 +82,42 @@ Assuming we have the same dict, go through each line and say wether it'll work w
 3. pitcher_info['age'] = 32 -> no error
 '''
 
+'''
+Given the following list:
+
+1. Write a loop that goes through and prints the last name of every player.
+2. Write a comprehension that uses the given list to make a dictionary where the keys are the player names and the values are the length's
+of the strings
+'''
+
+my_roster_list = ['clayton kershaw', 'mookie betts', 'cody bellinger']
+
+for player in my_roster_list:
+    print(player.split(' ')[1])
+# Book Answer
+print({player: len(player) for player in my_roster_list})
+
+'''
+With the following dict:
+
+1. Write a comprehension that turns my_roster_dict into a list of just the positions
+2. Write a comprehension that turns my_roster_dict into a list of just player's last names start with 'b'
+'''
+
+my_roster_dict = {'p': 'kleyton kershaw', 'rf': 'mookie betts', '1b': 'cody bellinger'}
+print([key for key in my_roster_dict])
+print([player for _, player in my_roster_dict.items() if player.split(' ')[-1][0] == 'b'])
+
+'''
+1. Write a function mapper that takes a list and a function, applies the function to every item in the list and returns it.
+2. Assument a 300 avg use mapper with an anonymous function to get a expected hits from the following numbers of at bats. 
+Use round so your projections are even numbers
+'''
+
+# 1
+def mapper(my_list, my_function):
+  return [my_function(x) for x in my_list]
+
+#2
+list_of_atbats = [500, 410, 618, 288, 236]
+mapper(list_of_atbats, lambda x: int(x*0.300))
