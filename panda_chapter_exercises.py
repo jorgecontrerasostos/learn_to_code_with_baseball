@@ -13,5 +13,19 @@ dfp = pd.read_csv(
 dfp.head()
 
 '''
-3.0.2 Using the dfp DataFrame create another DataFrame dfp50
+3.0.2 Using the dfp DataFrame create another DataFrame dfp50 that is the
+top 50 pitchers by lowest ERA
 '''
+dfp50 = dfp.sort_values('ERA')
+dfp50[['nameFirst', 'nameLast', 'ERA']].head(50)
+
+'''
+Sort dfp by Name so Zack Greinke appears first.
+'''
+dfp.sort_values('nameFirst', ascending=False)
+dfp.head()
+
+'''
+What is the type of dfp.sort_values('W') = DataFrame
+'''
+type(dfp.sort_values('W'))
