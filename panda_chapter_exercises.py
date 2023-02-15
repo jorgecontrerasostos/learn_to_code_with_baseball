@@ -32,7 +32,10 @@ type(dfp.sort_values('W'))
 
 '''
 3.0.5
-a) Make a new DataFrame, dfp_simple, with just the columns nameFirst, nameLast, 'W, L, ERA
+a) Make a new DataFrame, dfp_simple, with just the columns nameFirst, nameLast, 'W, L, ERA'
+b) Rearrange dfp_simple so the order is 'nameLast', 'nameFirst', 'ERA', 'W', 'L'
+C) Using the original dfp DataFrame, add the 'teamID' column dfp_simple
+d) Write a copy of dfp_simple to ./data/problems/dfp_simple.txt. Make ir '|' pipe delimited 
 '''
 
 dfp_simple = dfp[['nameFirst', 'nameLast', 'W', 'L', 'ERA']]
