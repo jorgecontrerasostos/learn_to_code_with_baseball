@@ -29,3 +29,21 @@ dfp.head()
 What is the type of dfp.sort_values('W') = DataFrame
 '''
 type(dfp.sort_values('W'))
+
+'''
+3.0.5
+a) Make a new DataFrame, dfp_simple, with just the columns nameFirst, nameLast, 'W, L, ERA
+'''
+
+dfp_simple = dfp[['nameFirst', 'nameLast', 'W', 'L', 'ERA']]
+dfp_simple.head(5)
+
+dfp_simple = dfp_simple[['nameLast', 'nameFirst', 'ERA', 'W', 'L']]
+dfp_simple.head(5)
+
+dfp_simple['team'] = dfp['teamID']
+dfp_simple.head(5)
+
+dfp.to_csv(
+    path.join(DATA_DIR, 'problems', 'fdp_simple.txt'), sep='|'
+)
