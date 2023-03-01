@@ -69,3 +69,25 @@ players_cuba.to_csv(
     path.join(DATA_DIR,' 2018-season', 'players_cuba.csv'),
     index=False
 )
+
+# Creating new columns
+
+DATA_DIR = '/Users/jorgecontreras/desktop/web-projects/data-projects/data'
+
+# load data
+pp = pd.read_csv(path.join(DATA_DIR, '100-game-sample', 'pitches.csv'))
+
+pp['mph_max'] = 104.3
+pp[['pitcher', 'batter', 'i', 'o', 'b', 's', 'pitch_type', 'mph', 'mph_max']].head()
+
+pp['mph_max'] = 105.1
+pp[['pitcher', 'batter', 'i', 'o', 'b', 's', 'pitch_type', 'mph', 'mph_max']].head()
+
+# Math and number columns
+pp['sz_height'] = pp['sz_top'] - pp['sz_bot']
+pp[['pitcher', 'batter', 'i', 'o', 'b', 's', 'sz_top', 'sz_bot', 'sz_height']].head()
+
+# Using the sample() method we can print data frame columns randomly
+
+pp['season'] = 2018
+pp[['pitcher', 'batter', 'i', 'o', 'b', 's', 'pitch_type', 'mph', 'season']].sample(5)
